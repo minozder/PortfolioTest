@@ -16,7 +16,7 @@ html {
 body {
   margin: 0;
   background: #000;
-
+  font-family: Arial;
 }
 
 /* --- Navigation Menu ------------------------------ */
@@ -349,7 +349,7 @@ section#home a {
   background-color:rgb(255, 255, 255);
   position:absolute;
   display: flex;
-  bottom:10%;
+  top:85%;
   left:0;
   transform:rotate(3deg);
   overflow: none;
