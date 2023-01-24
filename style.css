@@ -731,6 +731,14 @@ box-shadow: inset -9px 9px 12px -8px #000000; */
   html{
     font-size:85%;
   }
+
+  .accent-1{
+    top:35%;
+  }
+
+  .accent{
+    top:65%;
+  }
 }
 
 @media (max-width: 400px) {
