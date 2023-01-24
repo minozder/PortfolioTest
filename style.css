@@ -2,10 +2,10 @@
 
 :root {
   --primaryColor: #fff;
-  --accent-color: #282323;
-  --text-color: #1b1b1b;
-  --navColor3: #282323;
-  --navColor4: #000000;
+  --accent-color: #993636;
+  --text-color: #222222;
+  --accent-background: #0c0c0c;
+  --background: #000000;
   --navColor5: #282323;
 }
 
@@ -15,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  background: #000;
+  background:var(--primaryColor);
   font-family: Arial;
 }
 
@@ -70,7 +70,7 @@ nav li a{
   padding:35px 0px;
   top:50%;
   transform: translateY(-50%);
-  color:#fff;
+  color:var(--primaryColor);
   text-transform:uppercase;
   letter-spacing:5px;
   text-decoration:none;
@@ -91,7 +91,7 @@ nav li a::before{
   content:"";
   width:25vw;
   height:3px;
-  background-color:white;
+  background-color:var(--primaryColor);
   position:absolute;
   left:0;
   top:50%;
@@ -106,27 +106,27 @@ nav li a:hover::before{
 
 
 nav li:nth-of-type(1) {
-  background: black;
+  background: var(--background);
 
 }
 
 nav li:nth-of-type(2) {
-  background:black
+  background:var(--background)
 
 }
 
 nav li:nth-of-type(3) {
-  background: black
+  background: var(--background)
 
 }
 
 nav li:nth-of-type(4) {
-  background: black;
+  background: var(--background);
 
 }
 
 nav li:nth-of-type(5) {
-  background: black;
+  background: var(--background);
 }
 
 /*Nav items slide-in animation*/
@@ -203,7 +203,8 @@ nav li:nth-of-type(5) {
 
 .filled{
   width:0;
-  height:100%;background-image:linear-gradient(to right, red, blue)
+  height:100%;
+  background-image:linear-gradient(to right, red, blue)
 }
 
 /* --- Menu Bars ------------------------------------ */
@@ -222,7 +223,7 @@ nav li:nth-of-type(5) {
 .bar3 {
   width: 45px;
   height: 4px;
-  background-color: #fff;
+  background-color: var(--background);
   margin: 8px 0;
   transition: 0.4s;
 }
@@ -230,7 +231,8 @@ nav li:nth-of-type(5) {
 /* Rotate first bar */
 .change .bar1 {
   transform: rotate(-45deg) translate(-9px, 10px);
-  border-radius: 40px;;
+  border-radius: 40px;
+  background-color: var(--primaryColor);
 }
 
 /* Fade out the second bar */
@@ -242,6 +244,7 @@ nav li:nth-of-type(5) {
 .change .bar3 {
   transform: rotate(45deg) translate(-6px, -9px);
   border-radius: 40px;
+  background-color: var(--primaryColor);
 }
 
 /* --- Sections ------------------------------------ */
@@ -269,7 +272,7 @@ section#home {
 }
 
 .logo-type{
-  background:rgb(0, 0, 0);
+  background:var(--primaryColor);
   width:100%;
   height:100vh;
   display:flex;
@@ -283,9 +286,9 @@ section#home {
   font-family:Rock Salt;
   font-size:.9rem;
   letter-spacing: 1rem;
-  transform: rotate(3deg);
-  background-color:rgb(255, 255, 255);
-  color:black;
+  transform: rotate(4deg);
+  background-color:var(--background);
+  color:var(--primaryColor);
   padding:0 10px;
 }
 
@@ -301,10 +304,11 @@ section#home {
 }
 
 .dev:hover,
-.logo:hover + .dev {
+.logo:hover + .dev{
 border-radius:40px;
 padding:0 30px;
 transition:all 300ms;
+transform: rotate(0deg);
 }
 
 .dev{
@@ -341,46 +345,54 @@ section#home a {
   position:relative;
   overflow:none;
   margin-bottom: 15rem;
+
 }
+
+
 
 .accent{
   width:110vw;
   height:6px;
-  background-color:rgb(255, 255, 255);
+  background-color:var(--background);
   position:absolute;
   display: flex;
   top:85%;
   left:0;
-  transform:rotate(3deg);
+  transform:rotate(4deg);
   overflow: none;
 }
+
 .accent-1{
   width:110vw;
   height:6px;
-  background-color:rgb(255, 255, 255);
+  background-color:var(--background);
   position:absolute;
   display: flex;
   top:20%;
   left:0;
-  transform:rotate(3deg);
+  transform:rotate(4deg);
   overflow: none;
 }
 
 
+
+
 section#about {
-  background-color:rgb(0, 0, 0);
+  background-color:rgb(255, 255, 255);
+  color:var(--background);
 }
 
 section#projects {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
 
 section#skills {
-  background-color: transparent;
+  background-color: rgb(255, 254, 254);
+  color:var(--background);
 }
 
 section#contact {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--background);
 }
 
 /***Tech stack section***/
@@ -410,12 +422,15 @@ section#contact {
 .sub-title{
   display:flex;
   font-size:1rem;
-  padding: 4px;
+  padding: 8px;
   margin:0 auto;
   margin-top:3rem;
-  border-bottom: solid 2px rgba(255, 255, 255, 0.847);
-  border-left: solid 2px rgba(255, 255, 255, 0.847);
+  border-bottom: solid 2px rgba(0, 0, 0, 0.847);
+  border-left: solid 2px rgba(0, 0, 0, 0.847);
   border-radius:3px;
+  position: sticky;
+  top:0px;
+  background-color: white;
 }
 
 .sub-title .two{
@@ -425,6 +440,10 @@ section#contact {
 
 
 /*Projects section*/
+
+.projects-title{
+  color:var(--background)
+}
 
 .project-grid{
   margin-top:10rem;
@@ -436,9 +455,6 @@ section#contact {
   background-color: rgba(255, 255, 255, 0.911);
   border-radius:5px;
   position:relative;
-  /* border:solid 2px green; */
-  /* -webkit-box-shadow: inset -9px 9px 12px -8px #000000; 
-box-shadow: inset -9px 9px 12px -8px #000000; */
 }
 
 .project-description{
@@ -451,14 +467,14 @@ box-shadow: inset -9px 9px 12px -8px #000000; */
 .project-details{
   margin:.6rem 0 .6rem -7rem;
   padding:2rem;
-  background: rgb(10, 10, 10);
+  background: var(--background);
   border-radius: 3px;
   -webkit-box-shadow: -4px 0px 6px 2px rgba(0,0,0,0.71); 
   box-shadow: -4px 0px 6px 2px rgba(0,0,0,0.71);
 }
 
 .tech-stack{
-  color:black;
+  color:var(--background);
   font-size:.8rem;
   display:flex;
   gap:1.6rem;
@@ -470,14 +486,14 @@ box-shadow: inset -9px 9px 12px -8px #000000; */
 }
 
 .project-title{
-  color:black;
+  color:var(--background);
   margin:0;
 }
 
 .link{
   text-decoration: none;
   color:white;
-  background-color: black;
+  background-color: var(--background);
   padding:10px;
   border-radius:3px;
 }
@@ -543,8 +559,8 @@ box-shadow: inset -9px 9px 12px -8px #000000; */
 }
 
 .about-title{
-  background-color: rgb(255, 255, 255);
-  color:rgb(0, 0, 0);
+  background-color: var(--background);
+  color:rgb(255, 255, 255);
   border-radius:4px;
   padding:1rem;
   z-index:2;
@@ -562,13 +578,15 @@ box-shadow: inset -9px 9px 12px -8px #000000; */
   font-size:1,2rem;
   border-radius:4px;
   cursor:pointer;
-  background: linear-gradient(306deg, rgba(166,0,0,1) 0%, rgba(0,7,106,1) 100%);
+  background: black;
   transition: color 300ms;
 }
 
 .resume-download:hover{
-  color:rgb(0, 0, 0);
+  color:var(--background);
+  background-color: #fff;
   transition: all 300ms;
+  box-shadow: inset 0 0 0 2px black;
 }
 
 /***Contact form section**/
