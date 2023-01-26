@@ -10,10 +10,7 @@ const nav5 = document.getElementById("nav-5");
 
 const navItems = [nav1, nav2, nav3, nav4, nav5];
 
-
 //On load animation
-
-
 
 //Control navigation animation
 
@@ -42,36 +39,38 @@ function toggleNav() {
 //Event listene forr navigation
 menuBars.addEventListener("click", toggleNav);
 navItems.forEach((nav) => {
-  nav.addEventListener('click', toggleNav)
+  nav.addEventListener("click", toggleNav);
 });
-
 
 //Progress bar
 
-const filled = document.querySelector('.filled');
+const filled = document.querySelector(".filled");
 
-function update(){
-  filled.style.width = `${((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100)}%`;
+function update() {
+  filled.style.width = `${
+    (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+  }%`;
   requestAnimationFrame(update);
 }
 
-const imgElements = document.querySelectorAll('.project-image')
+const imgElements = document.querySelectorAll(".project-image");
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle("show",entry.isIntersecting);
-      // COnstant animation, uncomment for a one tim animation only 
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+      // COnstant animation, uncomment for a one tim animation only
       // if(entry.isIntersecting) observer.unobserve(entry.target);
-    })
+    });
   },
   {
-    threshold: .6,
+    threshold: 0.6,
     // rootMargin:"-100px"
   }
-)
+);
 
-imgElements.forEach(img =>{
-  observer.observe(img)
+imgElements.forEach((img) => {
+  observer.observe(img);
 });
 
 observer.observe(imgElements[0]);
