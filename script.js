@@ -39,7 +39,7 @@ function toggleNav() {
   }
 }
 
-//Event listeners
+//Event listene forr navigation
 menuBars.addEventListener("click", toggleNav);
 navItems.forEach((nav) => {
   nav.addEventListener('click', toggleNav)
@@ -54,5 +54,26 @@ function update(){
   filled.style.width = `${((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100)}%`;
   requestAnimationFrame(update);
 }
+
+const imgElements = document.querySelectorAll('.project-image')
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("show",entry.isIntersecting);
+      // COnstant animation, uncomment for a one tim animation only 
+      // if(entry.isIntersecting) observer.unobserve(entry.target);
+    })
+  },
+  {
+    threshold: .6,
+    // rootMargin:"-100px"
+  }
+)
+
+imgElements.forEach(img =>{
+  observer.observe(img)
+});
+
+observer.observe(imgElements[0]);
 
 update();
